@@ -20,7 +20,7 @@ services:
   dataphp:
     image: debian:jessie
     volumes:
-      - ./wwwdata:/var/www
+      - wwwdata:/var/www
 
 
   phpmyadmin:
@@ -40,7 +40,7 @@ services:
     image: debian:jessie
     volumes:
        - /sessions
-       - ./phpmyadmin:/etc/phpmyadmin
+       - phpmyadmin:/etc/phpmyadmin
        #/etc/phpadmin/config.user.inc.php
 
   mariadb:
@@ -59,18 +59,18 @@ services:
   datamariadb:
     image: debian:jessie
     volumes:
-       - ./dbdata:/var/lib/mysql
+       - dbdata:/var/lib/mysql
 
-#volumes: 
-#  dbdata:                       # Kompositions-interner Bezeichner (s. services:*:volumes)
-#    external:
-#      name: robichat-dbdata   # Systemweiter Bezeichner (s. zuvor docker volume create)
-#  wwwdata:
-#    external:
-#      name: robichat-wwwdata        
-#  phpmyadmin:
-#    external:
-#      name: robichat-phpmyadmindata
+volumes: 
+  dbdata:                       # Kompositions-interner Bezeichner (s. services:*:volumes)
+    external:
+      name: robichat-dbdata   # Systemweiter Bezeichner (s. zuvor docker volume create)
+  wwwdata:
+    external:
+      name: robichat-wwwdata        
+  phpmyadmin:
+    external:
+      name: robichat-phpmyadmindata
 
 
          
