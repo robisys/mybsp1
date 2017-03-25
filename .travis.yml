@@ -32,3 +32,4 @@ script:
   
 after_script:
 - docker-compose down
+ 
