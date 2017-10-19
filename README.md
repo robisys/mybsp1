@@ -15,3 +15,7 @@ you can run tests manually, that's Travis's job! Let's see how Travis can run te
 
 
 [learn-travis](https://github.com/dwyl/learn-travis)
+
+[jshint](https://github.com/jshint)
+
+
